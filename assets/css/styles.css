@@ -1,0 +1,120 @@
+
+.reveal .blockquote-unbound {
+  width: initial;
+}
+
+.reveal .code-unbound {
+  max-height: 16em;
+}
+
+.reveal .columns-2 .column {
+  float: left;
+  width: 50%;
+}
+
+.reveal .columns-2.columns-40-60 .column {
+  float: left;
+  width: 40%;
+}
+.reveal .columns-2.columns-40-60 .column:last-child {
+  width: 60%;
+}
+
+.reveal .columns-3 .column {
+  float: left;
+  width: 10%;
+}
+
+.reveal .columns-3 .column:first-child,
+.reveal .columns-3 .column:last-child {
+  width: 45%;
+}
+
+.reveal .bg-trans {
+  background-color: transparent;
+}
+
+.reveal .clearfix:after,
+.reveal .columns-2:after,
+.reveal .columns-3:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.reveal .font-size-xl {
+  font-size: 150%;
+}
+
+.reveal .font-size-lg {
+  font-size: 125%;
+}
+
+.reveal .font-size-md {
+  font-size: 80%;
+}
+
+.reveal .font-size-sm {
+  font-size: 60%;
+}
+
+.reveal .margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .margin-bottom-minus-fifteen-percent {
+  margin-bottom: -15%;
+}
+
+.reveal .margin-top-1em {
+  margin-top: 1em;
+}
+
+.reveal .margin-top-3em {
+  margin-top: 3em;
+}
+
+.reveal .overflow-hidden {
+  overflow: hidden;
+}
+
+.reveal .text-align-center {
+  text-align: center;
+}
+
+.reveal .text-align-left {
+  text-align: left;
+}
+
+.reveal .text-indent-all {
+  padding-left: 1em;
+}
+
+.reveal .width-three-quarter {
+  width: 75%;
+}
+
+.reveal .without-borders {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal pre {
+  border: 5px solid transparent;
+  font-size: 1em;
+  width: 95%;
+}
+
+.reveal pre code {
+  background-color: #ddd;
+  color: initial;
+}
+
+/* Highlight code in the current fragment to more easily distinguish it */
+.reveal pre.current-fragment, .reveal .current-fragment pre {
+  border-color: #f0f;
+}

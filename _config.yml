@@ -1,0 +1,19 @@
+author: Danny Guinther
+gems:
+  - octopress-gist
+highlighter: rouge
+markdown: redcarpet
+redcarpet:
+  extensions: [
+    autolink,
+    disable_indented_code_blocks,
+    fenced_code_blocks,
+    footnotes,
+    no_intra_emphasis,
+    space_after_headers,
+    strikethrough,
+    tables,
+    underline
+  ]
+title: Epic Move
+url: http://epic-move.tdg5.com
