@@ -21,6 +21,8 @@
 ### Postgres
 ### Compute
 
+## Our Journey vs. Your Journey
+
 ## Research
 ### Amazon has new tools aimed at making this easier. Check them out.
 ### Consider alternate strategies
