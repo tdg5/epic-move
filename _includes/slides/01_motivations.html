@@ -1,4 +1,66 @@
 <section>
-  <h3>Motivations</h3>
-  <p></p>
+  <h2>Motivations</h2>
+</section>
+<section>
+  <h3>A Rough Timeline</h3>
+  <p>December 10th, 2014: Datto acquires Backupify</p>
+  <p>Nanoseconds later: Holy Hell, we need to get the f*** out of AWS</p>
+</section>
+<section>
+  <h3>Unsustainable Costs</h3>
+  <ul>
+    <li>
+      Hundreds of EC2 Instances
+      <ul>
+        <li>Typically larger, more expensive instance types</li>
+      </ul>
+    </li>
+    <li>
+      4 petabytes of data in S3
+      <ul>
+        <li>That's more than 4 million gigabytes</li>
+        <li>Skyrocketed to more than 10PB by the time migrations began</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <blockquote>And you may ask yourself,<br>well how did I get here?</blockquote>
+  <p>Talking Heads - Once In A Lifetime</p>
+</section>
+<section>
+  <h3>How did we get here?</h3>
+  <ul>
+    <li>
+      Minimizing vendor lock-in has its costs
+      <ul>
+        <li>
+          Other than S3, very minimal dependency on other AWS services
+        </li>
+        <li>
+          Trade-off: Takes a lot of compute and operational knowledge to roll your own
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>How did we get here?</h3>
+  <ul>
+    <li>
+      Incomprehensible early assumptions / design decisions
+      <ul>
+        <li>No process of data de-duplication</li>
+        <li>No process to delete dead data</li>
+      </ul>
+    </li>
+    <li>
+      Atypical usage patterns
+      <ul>
+        <li>A few outliers can turn a not great situation into a full blown
+        nightmare</li>
+      </ul>
+    </li>
+  </ul>
+  <!-- Crazy pills -->
 </section>
