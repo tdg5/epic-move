@@ -1,4 +1,5 @@
 # Epic Move
+
 ## Background and Motivations
 ### The Acquisition
 ### Cost, cost, cost
@@ -75,6 +76,8 @@
 #### Be prepared to cycle teams on and off the project to limit fatigue and spread knowledge
 
 ## Hindsight is 20/20
+### We should have discontinued SharedDocs
+### We should have dumped problem customers
 ### Anything you can do in place and incrementally, you should.
 ### If you ever think you might have to do this kind of migration, be willing to pay more for your engineers early on. The mistakes affordable engineers make will cost you later.
 ### Large migrations can easily become a scapegoat.
