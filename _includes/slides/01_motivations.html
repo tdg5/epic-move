@@ -35,11 +35,12 @@
       Minimizing vendor lock-in has its costs
       <ul>
         <li>
-          Other than S3, very minimal dependency on other AWS services
+          Very minimal dependency on other AWS services (other than EC2 &amp; S3)
         </li>
         <li>
-          Trade-off: Takes a lot of compute and operational knowledge to roll your own
+          Trade-off: takes compute and operational knowledge to roll your own
         </li>
+        <li><em>Forget yee not:</em> <strong>compute = money</strong></li>
       </ul>
     </li>
   </ul>
@@ -48,16 +49,17 @@
   <h3>How did we get here?</h3>
   <ul>
     <li>
-      Incomprehensible early assumptions / design decisions
+      Early assumptions / design decisions didn't work out
       <ul>
         <li>No process of data de-duplication</li>
-        <li>No process to delete dead data</li>
+        <li>Dead data most often "deleted" by throwing encryption keys away</li>
+        <li>Manual and cumbersome process to delete dead block storage</li>
       </ul>
     </li>
     <li>
       Atypical usage patterns
       <ul>
-        <li>A few outliers can turn a not great situation into a full blown
+        <li>A few outliers can turn a strained situation into a full blown
         nightmare</li>
       </ul>
     </li>
