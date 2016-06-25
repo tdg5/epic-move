@@ -1,24 +1,90 @@
 <section>
-  <h3>Cloud Services in Motion</h3>
-  <p></p>
+  <h2>Cloud Services in Motion</h2>
 </section>
 <section>
-  <h4>Compute</h4>
-  <p></p>
+  <h3>Compute:</h3>
+  <ul>
+    <li>EC2 --&gt; bare metal, self-hosted VMs, Docker</li>
+    <li>00's of nodes</li>
+  </ul>
 </section>
 <section>
-  <h4>AWS S3 -> OpenStack Swift</h4>
-  <p></p>
+  <h3>Compute:</h3>
+  <ul>
+  </ul>
 </section>
 <section>
-  <h4>Cassandra</h4>
-  <p></p>
+  <h3>Cassandra:</h3>
+  <ul>
+    <li>2 clusters, more than 100 nodes total</li>
+    <li>1 cluster read-oriented, 1 cluster write-oriented</li>
+    <li>
+      Mix of versions approaching end of life
+      <ul>
+        <li>Limited options for streaming replication</li>
+      </ul>
+    </li>
+  </ul>
 </section>
 <section>
-  <h4>Redis</h4>
-  <p></p>
+  <h3>Cassandra:</h3>
+  <ul>
+    <li>VMs --&gt; Docker</li>
+    <li>Migrations and upgrades in parallel</li>
+  </ul>
 </section>
 <section>
-  <h4>Postgres</h4>
-  <p></p>
+  <h3>Redis:</h3>
+  <ul>
+    <li>5 Clusters, more than 60 nodes total</li>
+    <li>Mixed-use, ephemeral<em>ish</em> data</li>
+  </ul>
+</section>
+<section>
+  <h3>Redis:</h3>
+  <ul>
+    <li>
+      Typically small enough for a variety of strategies
+      <ul>
+        <li>Rebuild cache data</li>
+        <li>Replace, drain, and retire</li>
+        <li>Redis built-in replication</li>
+        <li>Lift it &amp; ship it</li>
+      </ul>
+    </li>
+    <li>Make sure "ephemeral" data is really ephemeral</li>
+    <li>
+      Lift-and-ship: <code>redis-cli bgsave</code> + <code>rsync</code> for
+      non-ephemeral data
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Postgres:</h3>
+  <ul>
+    <li>3 master-slave pairs</li>
+    <li>1 monolithic, 2 service-oriented</li>
+    <li>&gt;250GB</li>
+  </ul>
+</section>
+<section>
+  <h3>Postgres:</h3>
+  <ul>
+  </ul>
+</section>
+<section>
+  <h3>Block Storage:</h3>
+  <ul>
+    <li>S3 --&gt; OpenStack Swift</li>
+    <li>More than 10GB of data in S3</li>
+    <li>
+      2015-06 milestone: 7PB of data <strong><em>&nbsp;X&nbsp;</em></strong> 3n
+      replication = 21PB
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Block Storage:</h3>
+  <ul>
+  </ul>
 </section>
