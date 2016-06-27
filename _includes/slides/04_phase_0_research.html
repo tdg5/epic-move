@@ -1,8 +1,93 @@
 <section>
-  <h3>Phase 0: Research</h3>
-  <p></p>
+  <h2>Phase 0: Research</h2>
 </section>
 <section>
-  <h4></h4>
-  <p></p>
+  <h3>Understand your situation</h3>
+  <ul>
+    <li>
+      Get a sense of your various growth rates
+      <ul><li>Different strategies required when you're taking in data faster
+      than you can get it out</li></ul>
+    </li>
+    <li>
+      Know your bottlenecks and trouble services
+      <ul>
+        <li>Optimize where possible</li>
+        <li>Be prepared to wait</li>
+        <li>Be prepared to work around these systems</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Consider alternatives to migration</h3>
+  <ul>
+    <li>S3 Infrequent Access storage</li>
+    <li>Amazon Glacier</li>
+    <li>Amazon Snowball Import/Export service</li>
+    <li>Retrieve 3rd party data again</li>
+    <li>
+      Do you <strong>really</strong> need all the data?
+      <ul>
+        <li>Even a data backup company found extraneous data</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Replacements and Upgrades</h3>
+  <ul>
+    <li>
+      Replacing AWS services will be harder than you expect
+      <ul><li>Start researching and vetting replacements ASAP</li></ul>
+    </li>
+    <li>
+      Determine what needs to be upgraded now
+      <ul>
+        <li>
+          More recent versions tend to have better migration capabilities which
+          may affect your design
+        </li>
+        <li>Separate upgrades from migrations where possible</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>S3 clones != S3</h3>
+  <ul>
+    <li>
+      Test your S3 replacement of choice early and often
+      <ul><li>Test both egress scale and steady-state scale</li></ul>
+    </li>
+    <li>
+      Ensure S3 replacement will support your dataset's:
+      <ul>
+        <li>partitioning strategy</li>
+        <li>typical file sizes</li>
+        <li>total number of files</li>
+        <li>total amount of storage</li>
+      </ul>
+    </li>
+    <li>Remember: data replication is now your responsibility</li>
+  </ul>
+</section>
+<section>
+  <h2>Timing</h2>
+  <ul>
+    <li>
+      Find your replacement services
+      <ul>
+        <li>Depending on how you've abused AWS, finding replacements may take
+        time</li>
+        <li>All those times you said, "Well that's their problem", will come
+        back to haunt you</li>
+      </ul>
+    </li>
+    <li>
+      The migration will take time, so start development there and focus on next steps once
+      migration is underway
+    </li>
+    <li>Focus on data that will yield the largest return for the least effort</li>
+  </ul>
 </section>

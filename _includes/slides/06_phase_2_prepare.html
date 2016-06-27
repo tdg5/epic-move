@@ -1,8 +1,51 @@
 <section>
-  <h3>Phase 2: Prepare</h3>
-  <p></p>
+  <h2>Phase 2: Prepare</h2>
 </section>
 <section>
-  <h4></h4>
-  <p></p>
+  <h3>Optimize the network</h3>
+  <ul>
+    <li>
+      You're now dealing with at least 2 distinct networks
+      <ul><li>Repeat optimizations as necessary</li></ul>
+    </li>
+    <li>
+      If you use a VPC, figure out your cross-cloud communication strategy
+      <ul>
+        <li>VPN? Tunneling?</li>
+        <li>Consider the implications of this choice</li>
+        <li>SSL termination can take a good deal of RAM and CPU</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Upgrade now</h3>
+  <ul>
+    <li>
+      Get started on any necessary upgrades early to mitigate complications,
+      complexity, and scaling requirements that occur when upgrading while migrating
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>So Many Metrics</h2>
+  <ul>
+    <li>
+      Find metrics that provide confidence that the current plan is the right
+      plan
+    </li>
+    <li>
+      Find metrics to prevent the migration process from obscuring visibility
+      into the overall health of the application
+      <ul>
+        <li>
+          These metrics will also help prevent the migration from becoming a
+          scapegoat for unrelated system problems
+        </li>
+      </ul>
+    </li>
+    <li>
+      Does your monitoring infrastructure support multiple clouds?
+    </li>
+  </ul>
 </section>

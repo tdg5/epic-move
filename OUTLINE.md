@@ -33,20 +33,20 @@
 #### Glacier
 #### S3 Infrequent Access Storage
 #### Drive round trips?
-#### Do you REALLY need all the data?
 #### Is there somewhere else you can get the data from?
+#### Do you REALLY need all the data?
 ##### We are a backup company and even we found data that we didn't REALLY need
 ### Beware egress costs
 #### It may make sense to run some tasks on AMZ compute to save money
-
-## Design
-### Keep it simple, stupid
-#### Avoid temptations to complicate migration to solve other outstanding problems
 ### Open-source replacements for S3 are not as robust as S3. Especially if you've misused S3.
 #### Determine and test your replacement object store early and test it often.
 #### Don't forget to test both for your egress scale and your steady-state scale
 #### Make sure your selected object store will support the total number of files, typical file sizes, and total amount of storage you want to store
 #### Remember, you now have to be responsible for making sure your data is well replicated
+
+## Design
+### Keep it simple, stupid
+#### Avoid temptations to complicate migration to solve other outstanding problems
 ### Know how you're going to audit the data
 #### Decide this up front
 #### Be careful not to under estimate the confidence required before the organization feels comfortable deleting all of a customer's data

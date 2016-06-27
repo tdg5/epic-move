@@ -1,8 +1,30 @@
 <section>
-  <h3>Phase 3: Execute</h3>
-  <p></p>
+  <h2>Phase 3: Execute</h2>
 </section>
 <section>
-  <h4></h4>
-  <p></p>
+  <h3>Prototyping</h3>
+  <ul>
+    <li>Prototype and test the entire migrate -&gt; audit -&gt; delete pipeline ASAP</li>
+    <li>
+      The migration will take time, so start there and focus on next steps once
+      migration is underway
+    </li>
+    <li>Focus on data that will yield the largest return for the least effort</li>
+  </ul>
+</section>
+<section>
+  <h3>Tech Debt</h3>
+  <ul>
+    <li>
+      Avoid complicating application code with migration logic as possible
+      <ul><li>Accept defeat early</li></ul>
+    </li>
+    <li>
+      Push migration code outside of the application code as much as possible
+      <ul>
+        <li>Offers more flexibility in what languages/strategies can be used</li>
+        <li>Accept defeat early</li>
+      </ul>
+    </li>
+  </ul>
 </section>

@@ -1,8 +1,35 @@
 <section>
-  <h3>Phase 1: Design</h3>
-  <p></p>
+  <h2>Phase 1: Design</h2>
 </section>
 <section>
-  <h4></h4>
-  <p></p>
+  <h3>Keep It Simple, Stupid</h3>
+  <ul>
+    <li>
+      Avoid temptation to complicate migration to solve outstanding problems
+    </li>
+    <li>Prefer what is simple over what is easy</li>
+    <li>
+      Minimize the number of variables whenever possible
+      <ul>
+        <li>Handle upgrades separately (e.g. Cassandra 1.2 -&gt; Cassandra 2.2)</li>
+        <li>Handle internal service substitutions separately</li>
+        <li>Handle environment substitutions separately (VM -&gt; Docker)</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Beware egress costs!</h3>
+  <ul>
+    <li>Limit extraneous egress to save $$$</li>
+    <li>Running some tasks on EC2 compute might be more affordable than egress</li>
+  </ul>
+</section>
+<section>
+  <h3>Verifying the data</h3>
+  <ul>
+    <li>Decide how you're going to audit the data up front</li>
+    <li>Don't underestimate the confidence required to actually delete data</li>
+    <li>Likely a task worth running on EC2 compute</li>
+  </ul>
 </section>
