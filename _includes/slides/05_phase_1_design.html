@@ -6,23 +6,51 @@
   <ul>
     <li>
       Avoid temptation to complicate migration to solve outstanding problems
+      <ul>
+        <li>Don't overlook impact of tech debt on speed, ease, and agility</li>
+      </ul>
     </li>
     <li>Prefer what is simple over what is easy</li>
     <li>
       Minimize the number of variables whenever possible
       <ul>
         <li>Handle upgrades separately (e.g. Cassandra 1.2 -&gt; Cassandra 2.2)</li>
-        <li>Handle internal service substitutions separately</li>
+        <li>Handle internal service substitutions separately (VPC -&gt; stunnel)</li>
         <li>Handle environment substitutions separately (VM -&gt; Docker)</li>
       </ul>
     </li>
+    <li>Prefer incremental progress as opposed to depending on completion</li>
+  </ul>
+</section>
+<section>
+  <blockquote>
+    Well the app in general used to be way smaller.<br>It didn't seem as stupid
+    a year ago.
+  </blockquote>
+  <p>Michael Hoydis &mdash; DevOps Engineer / Security Engineer</p>
+</section>
+<section>
+  <h3>Keep A Record What and Why</h3>
+  <ul>
+    <li>What is obvious today won't be obvious next week (much less next year)</li>
+    <li>The human brain is not deterministic</li>
+    <li>
+      Other teams/engineers coming onto the project will better understand the
+      history of decisions and the impact of those decisions
+      <ul>
+        <li>History of the migration is more important than you realize when it
+        comes time to debug</li>
+      </ul>
+    </li>
+    <li>Reduce the chance of everyone forgetting some minor but critical detail</li>
+    <li>Things change</li>
   </ul>
 </section>
 <section>
   <h3>Beware egress costs!</h3>
   <ul>
     <li>Limit extraneous egress to save $$$</li>
-    <li>Running some tasks on EC2 compute might be more affordable than egress</li>
+    <li>Running some tasks on EC2 compute may be more affordable</li>
   </ul>
 </section>
 <section>
@@ -31,5 +59,32 @@
     <li>Decide how you're going to audit the data up front</li>
     <li>Don't underestimate the confidence required to actually delete data</li>
     <li>Likely a task worth running on EC2 compute</li>
+    <li>
+      Reduce how much of the data is audited over time
+      <ul>
+        <li>Always audit some of the data so regressions can be detected</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Deleting the data</h3>
+  <ul>
+    <li>
+      Consider relationship between audits and deletions
+      <ul>
+        <li>Delete each item as audited?</li>
+        <li>Delete each bucket after fully audited?</li>
+      </ul>
+    </li>
+    <li>
+      Prefer strategies that allow you to delete data item by item rather than
+      bucket by bucket, incremental &gt; all at once on completion
+    </li>
+    <li>Don't underestimate the confidence required to actually delete data</li>
+    <li>
+      Figure out what sort of safety window is needed before a delete becomes
+      permanent if you're auditing less than all the data
+    </li>
   </ul>
 </section>

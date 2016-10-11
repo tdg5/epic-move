@@ -4,13 +4,27 @@
 <section>
   <h3>Compute:</h3>
   <ul>
-    <li>EC2 --&gt; bare metal, self-hosted VMs, Docker</li>
-    <li>00's of nodes</li>
+    <li>EC2 -&gt; bare metal, self-hosted VMs, Docker</li>
+    <li>100's of nodes</li>
+    <li>Variety of workloads and system requirements</li>
   </ul>
 </section>
 <section>
   <h3>Compute:</h3>
   <ul>
+    <li>
+      Created EC2-like provisioning API
+    </li>
+    <li>
+      Opaque (though seemingly homogeneous) service distribution transitioned to
+      a more heterogeneous distribution
+      <ul><li>Harder to accommodate system maintenance when all the things are
+      on a single host</li></ul>
+    </li>
+    <li>
+      Due to compute allocation strategy, still face problems of a shared
+      environment
+    </li>
   </ul>
 </section>
 <section>
@@ -29,8 +43,17 @@
 <section>
   <h3>Cassandra:</h3>
   <ul>
-    <li>VMs --&gt; Docker</li>
+    <li>VMs -&gt; Docker</li>
     <li>Migrations and upgrades in parallel</li>
+    <li>
+      Variety of migration strategies:
+      <ul>
+        <li>Lift it &amp; ship it (<code>rsync</code> FTW)</li>
+        <li>Application process to migrate data to clone cluster</li>
+        <li>Later, after upgrades: Cassandra streaming replication</li>
+      </ul>
+    </li>
+    <li>Application-layer writes to all backends not recommended</li>
   </ul>
 </section>
 <section>
@@ -38,6 +61,7 @@
   <ul>
     <li>5 Clusters, more than 60 nodes total</li>
     <li>Mixed-use, ephemeral<em>ish</em> data</li>
+    <li>Variable uptime requirements</li>
   </ul>
 </section>
 <section>
@@ -64,27 +88,99 @@
   <ul>
     <li>3 master-slave pairs</li>
     <li>1 monolithic, 2 service-oriented</li>
+    <li>24/7 uptime requirements</li>
     <li>&gt;250GB</li>
   </ul>
 </section>
 <section>
   <h3>Postgres:</h3>
   <ul>
-  </ul>
-</section>
-<section>
-  <h3>Block Storage:</h3>
-  <ul>
-    <li>S3 --&gt; OpenStack Swift</li>
-    <li>More than 10GB of data in S3</li>
     <li>
-      2015-06 milestone: 7PB of data <strong><em>&nbsp;X&nbsp;</em></strong> 3n
-      replication = 21PB
+      Obvious strategy given uptime requirements and available tools
+    </li>
+    <li>
+      Replicate, failover, retire:
+      <ul>
+        <li>PG master-slave replication to new slave host</li>
+        <li>Once new slave is caught up, promote slave to master</li>
+        <li>Build new slave from new master</li>
+        <li>Once new slave is caught up, retire former master</li>
+      </ul>
     </li>
   </ul>
 </section>
 <section>
   <h3>Block Storage:</h3>
   <ul>
+    <li>S3 -&gt; OpenStack Swift</li>
+    <li>More than 10PB of data in S3</li>
+    <li>Most complicated migration given:
+      <ul>
+        <li>magnitude</li>
+        <li>inexperience with OpenStack Swift</li>
+        <li>transformation requirements</li>
+        <li>karma?</li>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Block Storage:</h3>
+  <ul>
+    <li>
+      Haunted by all those times a Backupify engineer said<br>"Well that's
+      Amazon's problem, not ours"
+      <ul>
+        <li>
+          Most Backupify data stored in one bucket, owned by one user
+          <ul><li>Tens of billions of objects</li></ul>
+        </li>
+        <li>
+          Swift couldn't come close to that
+          <ul>
+            <li>Swift depends heavily on SQLite</li>
+            <li>This limited options for scaling # of objects</li>
+            <li>
+              Made certain API usage patterns infeasible
+              <ul><li>e.g. list operations</li></ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Deduplication required a change in encryption strategy
+      <ul><li>Everything had to be re-encrypted</li></ul>
+    </li>
+  </ul>
+</section>
+<section>
+  <h3>Block Storage:</h3>
+  <ul>
+    <li>
+      Vetted many different object stores
+      <ul><li>Ceph, Pithos, Cleversafe, etc.</li></ul>
+    </li>
+    <li>
+      Ultimately, OpenStack Swift "won"
+      <ul>
+        <li>Wouldn't be a "drop-in" replacement</li>
+        <li>With robust sharding across containers and accounts, it could
+        work</li>
+        <li>
+          Sharding strategy made list operations untenable
+          <ul>
+            <li>MOAR Cassandra!</li>
+            <li>Largest Cassandra table: Object storage related metadata</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>What to do about workloads that generate many small objects?</li>
+    <li>~250 hosts, growing to 300 hosts before 2016-08</li>
+    <li>~9000 disks of data</li>
+    <li>
+      2016-06 milestone: 7PB of data <strong><em>&nbsp;X&nbsp;</em></strong> 3n
+      replication = 21PB
+    </li>
   </ul>
 </section>

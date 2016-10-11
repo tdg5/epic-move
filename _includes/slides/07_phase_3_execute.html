@@ -16,15 +16,29 @@
   <h3>Tech Debt</h3>
   <ul>
     <li>
+      Mitigate existing tech debt where possible before migrating
+    </li>
+    <li>
       Avoid complicating application code with migration logic as possible
       <ul><li>Accept defeat early</li></ul>
     </li>
     <li>
-      Push migration code outside of the application code as much as possible
+      Push migration code outside of the application as much as possible
       <ul>
-        <li>Offers more flexibility in what languages/strategies can be used</li>
+        <li>
+          Offers more flexibility in what languages/strategies can be used
+          <ul>
+            <li>
+              e.g. Don't migrate with a scripting language if you don't have to
+            </li>
+          </ul>
+        </li>
         <li>Accept defeat early</li>
       </ul>
+    </li>
+    <li>
+      Temptation likely proportional to your position on the<br>
+      monolith -&gt; microservices spectrum
     </li>
   </ul>
 </section>

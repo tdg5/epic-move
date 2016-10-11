@@ -6,8 +6,20 @@
   <ul>
     <li>
       Get a sense of your various growth rates
-      <ul><li>Different strategies required when you're taking in data faster
-      than you can get it out</li></ul>
+      <ul>
+        <li>Service growth rates and costs should inform order of attack</li>
+        <li>Different strategies required when growth outpaces migration</li>
+      </ul>
+    </li>
+    <li>
+      How do you define "done"?
+      <ul>
+        <li>When everything has been migrated?</li>
+        <li>
+          When the cost of migrating outweighs the return?
+          <ul><li>75% of the work will get you 90% of the benefit</li></ul>
+        </li>
+      </ul>
     </li>
     <li>
       Know your bottlenecks and trouble services
@@ -67,6 +79,7 @@
         <li>typical file sizes</li>
         <li>total number of files</li>
         <li>total amount of storage</li>
+        <li>API dependencies</li>
       </ul>
     </li>
     <li>Remember: data replication is now your responsibility</li>
@@ -76,18 +89,26 @@
   <h2>Timing</h2>
   <ul>
     <li>
-      Find your replacement services
-      <ul>
-        <li>Depending on how you've abused AWS, finding replacements may take
-        time</li>
-        <li>All those times you said, "Well that's their problem", will come
-        back to haunt you</li>
-      </ul>
+      Identify biggest contributors to current and future costs and start there
     </li>
     <li>
-      The migration will take time, so start development there and focus on next steps once
-      migration is underway
+      Alternatively, focus on data that will yield greatest return for least
+      effort
     </li>
-    <li>Focus on data that will yield the largest return for the least effort</li>
+    <li>
+      Get service upgrades started early
+    </li>
+    <li>
+      Find replacement services &mdash; depending on how you've abused AWS,
+      finding replacements may take time
+    </li>
+    <li>
+      The migration will take time, so start development there and focus on next
+      steps once migration is underway
+    </li>
+    <li>
+      Consider building out several options simultaneously at the start in case
+      some strategies work out better than others or don't work out at all
+    </li>
   </ul>
 </section>

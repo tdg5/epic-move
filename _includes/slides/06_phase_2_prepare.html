@@ -21,18 +21,20 @@
 <section>
   <h3>Upgrade now</h3>
   <ul>
+    <li>Get started on any necessary upgrades early</li>
+    <li>Enables more numerous and more robust migration strategies</li>
+    <li>Mitigates complications, complexity, and scaling<br>requirements that come
+    with upgrading while migrating</li>
     <li>
-      Get started on any necessary upgrades early to mitigate complications,
-      complexity, and scaling requirements that occur when upgrading while migrating
+      Similarly, "upgrade" your codebase by addressing any<br>critical tech debt
     </li>
   </ul>
 </section>
 <section>
-  <h2>So Many Metrics</h2>
+  <h3>So Many Metrics</h3>
   <ul>
     <li>
-      Find metrics that provide confidence that the current plan is the right
-      plan
+      Find metrics that give confidence that the current plan is the right plan
     </li>
     <li>
       Find metrics to prevent the migration process from obscuring visibility
@@ -45,7 +47,30 @@
       </ul>
     </li>
     <li>
+      Find metrics that help focus the project and support the highest priorities
+      <ul>
+        <li>
+          e.g. relative quantity of errors doesn't matter if errors are
+          impacting segments that are not a priority
+        </li>
+      </ul>
+    </li>
+    <li>
       Does your monitoring infrastructure support multiple clouds?
     </li>
+  </ul>
+</section>
+<section>
+  <h3>Metrics worth considering</h3>
+  <ul>
+    <li>Standard application/platform health metrics</li>
+    <li>Actual AWS usage</li>
+    <li>Migration throughput</li>
+    <li>Number of audit successes/failures</li>
+    <li>Rate of phase transition (migrate -&gt; audit -&gt; delete)</li>
+    <li>Trends in delta given rate of new data vs. rate of deletion</li>
+    <li>How much data you think you deleted vs. how much AWS reflects</li>
+    <li>Recurring failures that waste compute or cause repetitive egress</li>
+    <li>Metrics mapping tasks to their cost-savings opportunities</li>
   </ul>
 </section>

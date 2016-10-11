@@ -3,8 +3,10 @@
 </section>
 <section>
   <h3>A Rough Timeline</h3>
-  <p>December 10th, 2014: Datto acquires Backupify</p>
-  <p>Nanoseconds later: Holy Hell, we need to get the f*** out of AWS</p>
+  <ul>
+    <li>December 11th, 2014: Datto acquires Backupify</li>
+    <li>Moments later: Holy hell, we need to get the <code>f(ck)</code> out of AWS</li>
+  </ul>
 </section>
 <section>
   <h3>Unsustainable Costs</h3>
@@ -16,17 +18,28 @@
       </ul>
     </li>
     <li>
-      4 petabytes of data in S3
+      4 petabytes of data in S3 at beginning of project
+    </li>
+    <li>More than 10PB by the time migrations began</li>
+    <li>
+      Obligatory scale comparisons:
       <ul>
-        <li>That's more than 4 million gigabytes</li>
-        <li>Skyrocketed to more than 10PB by the time migrations began</li>
+        <li>
+          10PB == 15.3 million CDs
+          <ul><li>Stacked vertically they'd be more than 11 miles tall</li></ul>
+        </li>
+        <li>10PB == 2.2 million DVDs</li>
+        <li>
+          If you counted one bit per second,<br>it would take almost 3 billion
+          years to count all 10PB
+        </li>
       </ul>
     </li>
   </ul>
 </section>
 <section>
   <blockquote>And you may ask yourself,<br>well how did I get here?</blockquote>
-  <p>Talking Heads - Once In A Lifetime</p>
+  <p>Talking Heads &mdash; Once In A Lifetime</p>
 </section>
 <section>
   <h3>How did we get here?</h3>
@@ -35,12 +48,14 @@
       Minimizing vendor lock-in has its costs
       <ul>
         <li>
-          Very minimal dependency on other AWS services (other than EC2 &amp; S3)
+          Other than EC2 &amp; S3, minimal dependency on other AWS services
         </li>
+        <li>Compute and operational knowledge required to roll your own</li>
         <li>
-          Trade-off: takes compute and operational knowledge to roll your own
+          <em>Forget yee not:</em><br>
+          <code>compute == money &amp;&amp; operational_knowledge == money</code>
         </li>
-        <li><em>Forget yee not:</em> <strong>compute = money</strong></li>
+        <li>Compute tends to stick around longer than operational knowledge</li>
       </ul>
     </li>
   </ul>
@@ -52,7 +67,7 @@
       Early assumptions / design decisions didn't work out
       <ul>
         <li>No process of data de-duplication</li>
-        <li>Dead data most often "deleted" by throwing encryption keys away</li>
+        <li>Dead data most often "deleted" by destroying encryption keys</li>
         <li>Manual and cumbersome process to delete dead block storage</li>
       </ul>
     </li>
@@ -61,8 +76,11 @@
       <ul>
         <li>A few outliers can turn a strained situation into a full blown
         nightmare</li>
+        <li>Under certain circumstances customers could contribute costs at a
+        quadratic rate while we billed them at a constant, or at best, linear
+        rate
+        </li>
       </ul>
     </li>
   </ul>
-  <!-- Crazy pills -->
 </section>
