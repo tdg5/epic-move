@@ -12,3 +12,7 @@ application from the brink of the AWS event horizon. A mission that would
 ultimately entail the creation of one of the world's largest OpenStack Swift
 clusters and the migration of more than 10 petabytes of data and a host of
 distributed services including PostgreSQL, Redis, and Cassandra.
+
+website: [http://epic-move.tdg5.com](http://epic-move.tdg5.com)
+
+slideshare: [http://www.slideshare.net/tdg5/epic-move](http://www.slideshare.net/tdg5/epic-move)
